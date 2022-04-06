@@ -25,4 +25,66 @@ public class Product_Group {
 
     @Column(name = "department")
     private String department;
+
+    public Product_Group() {
+    }
+
+    public Product_Group(int product_group_nr, String name, BigInteger id, String img, String department) {
+        this.product_group_nr = product_group_nr;
+        this.name = name;
+        this.id = id;
+        this.img = img;
+        this.department = department;
+    }
+
+    public int getProduct_group_nr() {
+        return product_group_nr;
+    }
+
+    public void setProduct_group_nr(int product_group_nr) {
+        this.product_group_nr = product_group_nr;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BigInteger getId() {
+        return id;
+    }
+
+    public void setId(BigInteger id) {
+        this.id = id;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    @Override
+    public String toString() {
+        return "Product_Group [" +
+                "product_group_nr=" + product_group_nr +
+                ", name='" + name + '\'' +
+                ", id=" + id +
+                ", img='" + img + '\'' +
+                ", department='" + department + '\'' +
+                ']';
+    }
 }
