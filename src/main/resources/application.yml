@@ -1,0 +1,16 @@
+# See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+spring:
+  thymeleaf.cache: false
+  main.show-banner: false
+jpa:
+  database: POSTGRESQL
+  show-sql: true
+  hibernate:
+    ddl-auto: create-drop
+datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/zelkulondb
+    username: postgres
+    password: gameboy2
+    driverClassName: org.postgresql.Driver
+
