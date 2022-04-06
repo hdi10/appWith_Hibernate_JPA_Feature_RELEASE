@@ -5,7 +5,12 @@ package zelkulon.appWith_Hibernate_JPA.model;
 
 import javax.persistence.*;
 import java.math.BigInteger;
-import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.List;
 
 //TODO Constructor, getter , setter
@@ -13,13 +18,22 @@ import java.util.List;
 @Entity
 @Table(name = "Product")
 public class Product {
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY);
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_auto", nullable = false)
+    private Long id_auto;
+
+    private int id;
+
+    @Column(name = "product_nr")
     private int product_nr;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name="name_manufacturer")
+    @Column(name = "name_manufacturer")
     private String name_manufacturer;
 
     @Column(name = "ean")
@@ -32,11 +46,19 @@ public class Product {
     @Column(name = "mhd")
     private String mhd;
 
-    public Product(){
+    public Long getId_auto() {
+        return id_auto;
+    }
+
+    public void setId_auto(Long id_auto) {
+        this.id_auto = id_auto;
+    }
+
+    public Product() {
 
     }
 
-    public Product(int product_nr,String name, String name_manufacturer, BigInteger ean, List<String> inhalt, String mhd){
+    public Product(int product_nr, String name, String name_manufacturer, BigInteger ean, List<String> inhalt, String mhd) {
         this.product_nr = product_nr;
         this.name = name;
         this.name_manufacturer = name_manufacturer;
