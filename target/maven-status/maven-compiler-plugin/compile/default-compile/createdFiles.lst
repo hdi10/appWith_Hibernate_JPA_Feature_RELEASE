@@ -1,0 +1,6 @@
+zelkulon\appWith_Hibernate_JPA\model\Product_Group.class
+zelkulon\appWith_Hibernate_JPA\controller\ProductController.class
+zelkulon\appWith_Hibernate_JPA\model\Product.class
+zelkulon\appWith_Hibernate_JPA\model\Belongs.class
+zelkulon\appWith_Hibernate_JPA\App.class
+zelkulon\appWith_Hibernate_JPA\repository\ProductDao.class
