@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import zelkulon.appWith_Hibernate_JPA.model.Product;
 import zelkulon.appWith_Hibernate_JPA.repository.ProductDao;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:8081")
+
 @RestController
 @RequestMapping("/api")
 public class ProductController {
@@ -24,6 +23,7 @@ public class ProductController {
     @RequestMapping("/hello1")
     public String home() {
         return "hello World!";
+
     }
     @Autowired
     ProductDao productDao;
@@ -45,7 +45,7 @@ public class ProductController {
             if (name == null)
                 products.addAll(productDao.findAll());
             else
-                products.addAll((Collection<? extends Product>) productDao.findByName(name));
+               // products.addAll(productDao.findByName(name));
 
             if (products.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -55,6 +55,8 @@ public class ProductController {
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
+
     }
 
     @GetMapping("/products/{product_nr}")

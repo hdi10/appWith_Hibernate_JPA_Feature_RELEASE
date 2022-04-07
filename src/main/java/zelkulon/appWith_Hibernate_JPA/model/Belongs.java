@@ -13,7 +13,7 @@ public class Belongs {
     @Id
     private int product_nr;
 
-    @Id
+
     private int product_group_nr;
 
 
